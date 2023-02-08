@@ -1,4 +1,4 @@
-// check web support
+// check webp support
 export default function isWebp() {
   function testWebP(callback) {
     const webP = new Image();
