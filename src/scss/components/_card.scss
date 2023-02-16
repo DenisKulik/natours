@@ -13,7 +13,6 @@
 		backface-visibility: hidden;
 		overflow: hidden;
 		border-radius: 3px;
-		box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
 		transition: all 0.8s ease;
 
 		&--front {
@@ -177,5 +176,49 @@
 	&__price-value {
 		font-size: 6rem;
 		font-weight: 100;
+	}
+
+	@include respond(tab-port) {
+		height: auto;
+		border-radius: 3px;
+		background-color: $color-white;
+		box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
+
+		&__side {
+			height: auto;
+			position: relative;
+			box-shadow: none;
+
+			&--back {
+				transform: rotateY(0deg);
+				clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+			}
+		}
+
+		&:hover &__side--front {
+			transform: rotateY(0deg);
+		}
+
+		&__details {
+			padding: 1rem 3rem;
+		}
+
+		// back side styling
+		&__cta {
+			width: 100%;
+			padding: 7rem 4rem 4rem 4rem;
+			position: relative;
+			top: 0;
+			left: 0;
+			transform: translate(0);
+		}
+
+		&__price-box {
+			margin-bottom: 3rem;
+		}
+
+		&__price-value {
+			font-size: 4rem;
+		}
 	}
 }
