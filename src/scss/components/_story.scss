@@ -49,9 +49,8 @@
 	}
 
 	&__caption {
-		position: absolute;
-		top: 50%;
-		left: 50%;
+		@include absCenter;
+
 		text-align: center;
 		font-size: 1.6rem;
 		color: $color-white;
